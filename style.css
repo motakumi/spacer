@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-items: center;
+  overflow: hidden;
+  background: #080d20;
+  color: #eaf3ec;
+  font-family: "Segoe UI", "Yu Gothic UI", "Meiryo", sans-serif;
+}
+
+.game-shell {
+  display: grid;
+  width: min(100vw, calc(100vh * 16 / 9));
+  width: min(100vw, calc(100dvh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  justify-items: center;
+}
+
+.screen-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: #080d20;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #080d20;
+  outline: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.orientation-notice {
+  display: none;
+}
+
+@media (orientation: portrait) and (max-width: 768px) and (pointer: coarse) {
+  .orientation-notice {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #080d20;
+    color: #eaf3ec;
+    text-align: center;
+  }
+
+  .orientation-notice p {
+    margin: 0;
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    font-weight: 700;
+  }
+}

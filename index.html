@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080d20">
+    <title>SPACER</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <h1 class="visually-hidden">SPACER</h1>
+      <section class="screen-frame" aria-label="ゲーム画面">
+        <canvas
+          id="game"
+          width="1920"
+          height="1080"
+          aria-label="SPACER。プレイボタンをタップまたはクリック、Enterキーで開始します。機体は指またはマウスの位置に向きます。画面またはスペースキーを長押しでチャージし、離してブーストします。"
+          tabindex="0"
+        ></canvas>
+      </section>
+    </main>
+    <div class="orientation-notice" role="status" aria-live="polite">
+      <p>画面を横にしてください</p>
+    </div>
+  </body>
+</html>
